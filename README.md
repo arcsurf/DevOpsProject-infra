@@ -1,2 +1,0 @@
-# DevOpsProject-infra
-DevOpsProject - Infrastructure
