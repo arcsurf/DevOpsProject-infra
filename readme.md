@@ -2,7 +2,6 @@ For security reasons we'll use env variables, you must export AWS access_key and
 -------------------------------------------------------------------------------------------------------------
 
 
-
 Using env variables:
 --------------------
 
