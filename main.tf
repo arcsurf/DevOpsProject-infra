@@ -24,3 +24,6 @@ resource "aws_instance" "app_server" {
     Name = "devOpsAppServerInstance"
   }
 }
+resource "aws_key_pair" "deployer" {
+  key_name   = "devOpsProject-app"
+}
