@@ -33,3 +33,11 @@ resource "aws_security_group" "dockerApp" {
     type = "terraform-test-security-group"
   }
 }
+
+resource "aws_eip" "elasticip" {
+  instance = aws_instance.app_server.id
+}
+
+output "EIP" {
+  value = aws_eip.elasticip.public_ip
+}
