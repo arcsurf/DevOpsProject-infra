@@ -4,11 +4,11 @@ pipeline {
     agent any
 
     stages {
-        stage ('Deploy EC2 app server wirh Terraform') {
+        stage ('Initializing Terraform') {
             steps {
                 script {
-                    echo 'Initializing Terraform'
-                    //sh "terraform init"
+                    echo 'Terraform init'
+                    sh "terraform init"
                 }
             }
         }
