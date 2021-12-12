@@ -13,10 +13,19 @@ pipeline {
             }
         }
 
+        stage ('Terraform plan') {
+            steps {
+                script {
+                    echo 'Terraform plan'
+                    sh "terraform plan"
+                }
+            }
+        }
+        
         stage ('Deploy EC2 app server wirh Terraform') {
             steps {
                 script {
-                    echo 'Appliying terraform config'
+                    //echo 'Appliying terraform config'
                     //sh 'terraform plan'
                 }
             }
