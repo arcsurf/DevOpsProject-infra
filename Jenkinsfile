@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     echo 'Appliying terraform config'
-                    sh 'terraform apply'
+                    sh 'terraform plan'
                 }
             }
         }
