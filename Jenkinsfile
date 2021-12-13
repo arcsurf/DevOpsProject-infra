@@ -9,7 +9,7 @@ pipeline {
                 script {
                     echo 'Terraform init'
                     sh "cd /home/ubuntu/infra/DevOpsProject-infra"
-                    sh "/usr/bin/terraform init -input=false"
+                    sh "/usr/bin/terraform init"
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
                 script {
                     echo 'Terraform plan'
                     sh "cd /home/ubuntu/infra/DevOpsProject-infra/"
-                    sh "/usr/bin/terraform plan -out=tfplan -input=false"
+                    sh "/usr/bin/terraform plan --auto-approve"
                 }
             }
         }
