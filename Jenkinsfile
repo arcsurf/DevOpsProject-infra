@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform plan'
-                    sh "/usr/bin/terraform plan"
+                    // sh "/usr/bin/terraform plan"
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     echo 'Appliying terraform config'
-                    sh '/usr/bin/terraform apply'
+                    // sh '/usr/bin/terraform apply'
                 }
             }
         }
