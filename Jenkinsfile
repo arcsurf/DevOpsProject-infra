@@ -8,7 +8,8 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform init'
-                    sh "/home/ubuntu/infra/DevOpsProject-infra/terraform init"
+                    sh "cd /home/ubuntu/infra/DevOpsProject-infra"
+                    sh "terraform init"
                 }
             }
         }
@@ -17,7 +18,8 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform plan'
-                    sh "/home/ubuntu/infra/DevOpsProject-infra/terraform plan"
+                    sh "/home/ubuntu/infra/DevOpsProject-infra"
+                    sh "terraform plan"
                 }
             }
         }
