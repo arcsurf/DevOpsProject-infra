@@ -8,8 +8,7 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform init'
-                    sh "cd /home/ubuntu/infra/DevOpsProject-infra"
-                    sh "terraform init"
+                    sh "/home/ubuntu/infra/DevOpsProject-infra/terraform init -input=false"
                 }
             }
         }
@@ -18,8 +17,7 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform plan'
-                    sh "/home/ubuntu/infra/DevOpsProject-infra"
-                    sh "sudo terraform plan --auto-approve"
+                    sh "/home/ubuntu/infra/DevOpsProject-infra/terraform plan -out=tfplan -input=false"
                 }
             }
         }
@@ -28,7 +26,7 @@ pipeline {
             steps {
                 script {
                     echo 'Appliying terraform config'
-                    sh '/home/ubuntu/infra/DevOpsProject-infra/terraform apply'
+                    sh '/home/ubuntu/infra/DevOpsProject-infra/terraform apply -input=false tfplan'
                 }
             }
         }
