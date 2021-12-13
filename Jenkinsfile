@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform plan'
-                    sh "cd /home/ubuntu/infra/DevOpsProject-infra/"
+                    sh "cd /home/ubuntu/infra/DevOpsProject-infra"
                     sh "/usr/bin/terraform plan --auto-approve"
                 }
             }
