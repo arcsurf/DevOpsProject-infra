@@ -2,13 +2,24 @@
 
 pipeline {
     agent any
+    tools {
+        terraform 'terraform-11'
+    }
 
     stages {
+        stage ('git checkout') {
+            steps {
+                script {
+                    echo 'git checkout'
+                    git credentialsId: 'gh_access_token', url: 'https://github.com/arcsurf/DevOpsProject-infra'
+                }
+            }
+        }
+        
         stage ('Initializing Terraform') {
             steps {
                 script {
                     echo 'Terraform init'
-                    sh "cd /home/ubuntu/infra/DevOpsProject-infra"
                     sh "/usr/bin/terraform init"
                 }
             }
@@ -18,8 +29,7 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform plan'
-                    sh "cd /home/ubuntu/infra/DevOpsProject-infra"
-                    sh "/usr/bin/terraform plan --auto-approve"
+                    sh "terraform plan"
                 }
             }
         }
@@ -28,7 +38,7 @@ pipeline {
             steps {
                 script {
                     echo 'Appliying terraform config'
-                    sh '/home/ubuntu/infra/DevOpsProject-infra/terraform apply -input=false tfplan'
+                    sh 'terraform apply'
                 }
             }
         }
