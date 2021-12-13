@@ -4,15 +4,6 @@ pipeline {
     agent any
 
     stages {
-        stage ('git checkout') {
-            steps {
-                script {
-                    echo 'git checkout'
-                    git credentialsId: 'gh_access_token', url: 'https://github.com/arcsurf/DevOpsProject-infra'
-                }
-            }
-        }
-        
         stage ('Initializing Terraform') {
             steps {
                 script {
