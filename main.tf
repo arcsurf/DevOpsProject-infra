@@ -19,7 +19,7 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami           = "ami-06d79c60d7454e2af"
   instance_type = "t2.micro"
-  key_name   = "devOpsProject-app"
+  key_name   = "depOpsRemoteAccess"
   user_data = file("${path.module}/dockerInstall.sh")
   security_groups = [ "dockerApp" ]
 
