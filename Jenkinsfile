@@ -19,7 +19,7 @@ pipeline {
                 script {
                     echo 'Terraform plan'
                     sh "/home/ubuntu/infra/DevOpsProject-infra"
-                    sh "terraform plan --auto-approve"
+                    sh "sudo terraform plan --auto-approve"
                 }
             }
         }
