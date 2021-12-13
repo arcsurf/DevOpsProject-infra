@@ -8,7 +8,8 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform init'
-                    sh "/home/ubuntu/infra/DevOpsProject-infra/terraform init -input=false"
+                    sh "cd /home/ubuntu/infra/DevOpsProject-infra"
+                    sh "/usr/bin/terraform init -input=false"
                 }
             }
         }
@@ -17,7 +18,8 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform plan'
-                    sh "/home/ubuntu/infra/DevOpsProject-infra/terraform plan -out=tfplan -input=false"
+                    sh "cd /home/ubuntu/infra/DevOpsProject-infra/"
+                    sh "/usr/bin/terraform plan -out=tfplan -input=false"
                 }
             }
         }
