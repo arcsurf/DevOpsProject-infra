@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     echo 'Appliying terraform config'
-                    sh '/usr/bin/terraform apply'
+                    sh '/usr/bin/terraform apply -auto-approve'
                 }
             }
         }
