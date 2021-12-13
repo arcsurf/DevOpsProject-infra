@@ -16,6 +16,11 @@ provider "aws" {
   secret_key = "B//uVLuwotsYCGwv2Eltfr3BSWFOKMp6+vkaCcKB"
 }
 
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = "${aws_instance.app_server.id}"
+  allocation_id = "eipalloc-0f8cde3b8dd76eeaa"
+}
+
 resource "aws_instance" "app_server" {
   ami           = "ami-06d79c60d7454e2af"
   instance_type = "t2.micro"
@@ -34,10 +39,12 @@ resource "aws_security_group" "dockerApp" {
   }
 }
 
-resource "aws_eip" "elasticip" {
-  instance = aws_instance.app_server.id
-}
 
-output "EIP" {
-  value = aws_eip.elasticip.public_ip
-}
+# resource "aws_eip" "elasticip" {
+#   instance = aws_instance.app_server.id
+#   as
+# }
+
+# output "EIP" {
+#   value = aws_eip.elasticip.public_ip
+# }
