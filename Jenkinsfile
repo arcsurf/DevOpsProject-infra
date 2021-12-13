@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     echo 'Terraform plan'
-                    // sh "/usr/bin/terraform plan"
+                    sh "/usr/bin/terraform plan"
                 }
             }
         }
