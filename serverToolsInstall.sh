@@ -17,3 +17,6 @@ apt-get update && apt-get install -y telegraf
 
 #net-tools install
 apt-get install -y net-tools
+
+#telegraf configuration and run
+# export INFLUX_URL="http://influx.couso.com.ar:8086"
