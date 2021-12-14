@@ -24,6 +24,6 @@ apt-get install -y net-tools
 
 #telegraf configuration and run
 rm /etc/telegraf/telegraf.conf
-wget https://github.com/arcsurf/telegraf/blob/main/telegraf.conf
+wget https://raw.githubusercontent.com/arcsurf/telegraf/main/telegraf.conf
 cp telegraf.conf /etc/telegraf/telegraf.conf
 rm telegraf.conf
