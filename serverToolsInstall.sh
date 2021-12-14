@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "hola" >> /home/hola.txt
+# echo "test" >> /home/test.txt
 sudo apt-get update -y
 
 #Docker install
@@ -23,4 +23,7 @@ apt-get update && apt-get install -y telegraf
 apt-get install -y net-tools
 
 #telegraf configuration and run
-# export INFLUX_URL="http://influx.couso.com.ar:8086"
+rm /etc/telegraf/telegraf.conf
+wget https://github.com/arcsurf/telegraf/blob/main/telegraf.conf
+cp telegraf.conf /etc/telegraf/telegraf.conf
+rm telegraf.conf

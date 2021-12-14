@@ -24,7 +24,7 @@ resource "aws_eip_association" "eip_assoc" {
 resource "aws_instance" "app_server" {
   ami           = "ami-06d79c60d7454e2af"
   instance_type = "t2.micro"
-  key_name   = "depOpsRemoteAccess"
+  key_name   = "devOpsProject-app"
   user_data = file("${path.module}/serverToolsInstall.sh")
   security_groups = [ "dockerApp" ]
 
