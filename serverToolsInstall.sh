@@ -9,6 +9,10 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 sudo apt-get update -y
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
+#Add user to group docker
+usermod -aG docker ubuntu
+usermod -aG docker jenkins
+
 #Telegraf install
 wget -qO- https://repos.influxdata.com/influxdb.key | sudo tee /etc/apt/trusted.gpg.d/influxdb.asc >/dev/null
 source /etc/os-release
