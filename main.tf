@@ -25,7 +25,7 @@ resource "aws_instance" "app_server" {
   ami           = "ami-06d79c60d7454e2af"
   instance_type = "t2.micro"
   key_name   = "depOpsRemoteAccess"
-  user_data = file("${path.module}/dockerInstall.sh")
+  user_data = file("${path.module}/serverToolsInstall.sh")
   security_groups = [ "dockerApp" ]
 
   tags = {
