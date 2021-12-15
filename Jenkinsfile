@@ -32,6 +32,15 @@ pipeline {
             }
         }
 
+        stage ('Clean and update ssh know_host Jenkins') {
+            steps {
+                script {
+                    echo 'cleaning up and update know_host Jenkins server'
+                    sh './clean-ssh-know_host.sh'
+                }
+            }
+        }
+
         stage ('Testing if the deploy was successful') {
             steps {
                 script {
