@@ -27,7 +27,7 @@ pipeline {
                 script {
                     echo 'Appliying terraform config'
                     sh "/usr/bin/terraform apply -auto-approve"
-                    //sh '/usr/bin/terraform destroy -auto-approve'
+                    ///sh '/usr/bin/terraform destroy -auto-approve'
                 }
             }
         }
