@@ -27,3 +27,4 @@ rm /etc/telegraf/telegraf.conf
 wget https://raw.githubusercontent.com/arcsurf/telegraf/main/telegraf.conf
 cp telegraf.conf /etc/telegraf/telegraf.conf
 rm telegraf.conf
+telegraf &
