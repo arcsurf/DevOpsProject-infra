@@ -36,6 +36,7 @@ pipeline {
             steps {
                 script {
                     echo 'cleaning up and update know_host Jenkins server'
+                    sh "clean-ssh-know_host.sh"
                     sh './clean-ssh-know_host.sh'
                 }
             }
