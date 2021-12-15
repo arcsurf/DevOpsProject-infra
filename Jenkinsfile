@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     echo 'Appliying terraform config'
-                    sh '/usr/bin/terraform apply -auto-approve'
+                    sh "/usr/bin/terraform apply -auto-approve"
                     //sh '/usr/bin/terraform destroy -auto-approve'
                 }
             }
@@ -36,8 +36,8 @@ pipeline {
             steps {
                 script {
                     echo 'cleaning up and update know_host Jenkins server'
-                    sh "clean-ssh-know_host.sh"
-                    sh './clean-ssh-know_host.sh'
+                    sh "./clean-ssh-know_host.sh"
+                    sh "./clean-ssh-know_host.sh"
                 }
             }
         }
