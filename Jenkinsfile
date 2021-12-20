@@ -1,5 +1,6 @@
 #!groovy
-def INFRA_DEPLOY_FLAG = true
+// True (create) or false (destroy) infraestructure flag.
+def INFRA_DEPLOY_FLAG = false
 
 pipeline {
     agent any
