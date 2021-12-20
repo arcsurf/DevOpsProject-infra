@@ -1,4 +1,5 @@
 #!groovy
+def INFRA_DEPLOY_FLAG = true
 
 pipeline {
     agent any
@@ -26,8 +27,11 @@ pipeline {
             steps {
                 script {
                     echo 'Appliying terraform config'
-                    //sh "/usr/bin/terraform apply -auto-approve"
-                    sh '/usr/bin/terraform destroy -auto-approve'
+                    if(INFRA_DEPLOY_FLAG == true) {
+                        sh "/usr/bin/terraform apply -auto-approve"
+                    } else {
+                        sh '/usr/bin/terraform destroy -auto-approve'
+                    }
                 }
             }
         }
@@ -35,9 +39,11 @@ pipeline {
         stage ('Clean and update ssh know_host Jenkins') {
             steps {
                 script {
+                    if(INFRA_DEPLOY_FLAG == true) {
                     echo 'cleaning up and update know_host Jenkins server'
                     sh "chmod +x clean-ssh-know_host.sh"
                     sh "./clean-ssh-know_host.sh"
+                    }
                 }
             }
         }
@@ -45,8 +51,10 @@ pipeline {
         stage ('Testing if the deploy was successful') {
             steps {
                 script {
+                    if(INFRA_DEPLOY_FLAG == true) {
                     echo 'executing some test'
                     // sh './test.sh'
+                    }
                 }
             }
         }
