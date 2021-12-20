@@ -1,6 +1,6 @@
 ### This project define the Ec2 infraestructure and installed services and applications for deploying developers applications into a containerized environment.
 
-####Advice: For security reasons, we recomend to use env variables for authentication procesess to AWS, you must export AWS access_key and secret_key as env variables.
+#### Advice: For security reasons, we recomend to use env variables for authentication procesess to AWS, you must export AWS access_key and secret_key as env variables.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Using env variables:
