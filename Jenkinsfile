@@ -1,6 +1,6 @@
 #!groovy
 // True (create) or false (destroy) infraestructure flag.
-def INFRA_DEPLOY_FLAG = true
+def INFRA_DEPLOY_FLAG = false
 
 pipeline {
     agent any
@@ -54,7 +54,7 @@ pipeline {
                 script {
                     if(INFRA_DEPLOY_FLAG == true) {
                     echo 'executing some test'
-                    // sh './test.sh'
+                    sh 'ping app.couso.com.ar'
                     }
                 }
             }
