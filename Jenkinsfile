@@ -1,5 +1,5 @@
 #!groovy
-// True (create) or false (destroy) infraestructure flag.
+/// True (create) or false (destroy) infraestructure flag.
 def INFRA_DEPLOY_FLAG = true
 
 pipeline {
