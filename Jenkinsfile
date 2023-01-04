@@ -54,7 +54,7 @@ pipeline {
                 script {
                     if(INFRA_DEPLOY_FLAG == true) {
                     echo 'executing some test'
-                    sh 'ping -c 3 app.couso.com.ar'
+                    sh 'ping -c 3 <YOUR APP DOMAIN NAME>'
                     }
                 }
             }
