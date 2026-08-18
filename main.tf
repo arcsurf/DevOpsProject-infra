@@ -12,13 +12,13 @@ terraform {
 provider "aws" {
   profile = "default"
   region  = "eu-west-3"
-  access_key = "AKIASIXD2FZZSEHIWRM7"
-  secret_key = "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"
+  access_key = "TOBESET"
+  secret_key = "TOBESET"
 }
 
 resource "aws_eip_association" "eip_assoc" {
   instance_id   = "${aws_instance.app_server.id}"
-  allocation_id = "eipalloc-0f8cde3b8dd76eeaa"
+  allocation_id = "TOBEOBTAIND"
 }
 
 resource "aws_instance" "app_server" {
