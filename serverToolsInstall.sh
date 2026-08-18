@@ -30,4 +30,4 @@ rm telegraf.conf
 telegraf &
 
 #keys for remote access from ci/cd server devops.couso.com.ar
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDl+z7cRO2OLK6wMvx6d2brgr8lRz2GBS2u38mrnTeBQHGnK19mYzv/4qbg/j+lMpdw+kYZfyApODJGk5EicCPsBPWkmCt93ZioD768eIDY2g/y2a+/i+UgWF6X3ucYuLadFWKp1oSKcCS7fZf83A7raadlN0rZxmmV9jyK1klRFKKyzGlCsQuyA89a6HckKm097/ufuT49ZZhLtjkQkdFDANz4/IJ+zuyp7FT1kfFELWUKOxLjPAu0ifVjhO4FbU69TwZmgqjkUzrZg4qgvesKP4dLPRs7oABwBsGxwbOWxuQeh8v3LCTH8TqzZVeOJVQUrg1ab4+5suWBhr5WwHLpENJ2lQVPeeXNfb3+cVlXR4KrpgEuz/AqDWBVmbttoSPRYhfHJd7AUq3txm14kWkNxrN2C9PeHiYJspNgkQ5nIv50AG4XJIPssIXkP1IRjYrTZfkUZ69MqK/gAFFd7p41cv3ahdl2wfAlXsxQSelLfy6eRqiTCXufoYZgkFiaKdU= jenkins@ip-172-31-23-4" >> /home/ubuntu/.ssh/authorized_keys
+echo "ssh-rsa KEY= jenkins@ip-172-31-23-4" >> /home/ubuntu/.ssh/authorized_keys
